@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0b1220" />
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.18)" />
+  <text x="110" y="185" fill="rgba(255,255,255,0.92)" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700">Photo Placeholder 1</text>
+  <text x="110" y="255" fill="rgba(255,255,255,0.72)" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="500">Drop a real image in src/assets/images/</text>
+</svg>
+
