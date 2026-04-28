@@ -1,0 +1,16 @@
+{
+  "name": "San Andreas Aviation",
+  "tagline": "Operations • Training • Structure",
+  "nav": [
+    { "title": "Home", "url": "/" },
+    { "title": "About Us", "url": "/about-us/" },
+    { "title": "How to Join", "url": "/application/" },
+    { "title": "Chain of Command", "url": "/chain-of-command/" },
+    {
+      "title": "Documents",
+      "url": "/Documents/"
+      
+    },
+    { "title": "SAAF", "url": "/saaf/" }
+  ]
+}

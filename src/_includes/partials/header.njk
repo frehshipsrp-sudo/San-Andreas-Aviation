@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/">
+      <span class="brand__name">{{ site.name }}</span>
+      <span class="brand__tagline">{{ site.tagline }}</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Primary navigation">
+      <ul class="nav__list">
+        {% for item in site.nav %}
+          {% set isActive = (page.url == item.url) or (item.url != "/" and page.url.startsWith(item.url)) %}
+          <li class="nav__item {% if item.children %}nav__item--has-children{% endif %}">
+            <a class="nav__link {% if isActive %}nav__link--active{% endif %}" href="{{ item.url }}">
+              {{ item.title }}
+            </a>
+
+            {% if item.children %}
+              <ul class="nav__submenu" aria-label="{{ item.title }} submenu">
+                {% for child in item.children %}
+                  {% set isChildActive = (page.url == child.url) %}
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link {% if isChildActive %}nav__submenu-link--active{% endif %}" href="{{ child.url }}">
+                      {{ child.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+

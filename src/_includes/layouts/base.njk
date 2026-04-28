@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if title %}{{ title }} | {% endif %}{{ site.name }}
+    </title>
+    <meta name="description" content="{{ description or site.tagline }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+
+    <main class="container">
+      {% if hero %}
+        <section class="hero">
+          <div class="hero__content">
+            <p class="hero__kicker">{{ hero.kicker or site.name }}</p>
+            <h1 class="hero__title">{{ hero.title or title }}</h1>
+            {% if hero.subtitle %}<p class="hero__subtitle">{{ hero.subtitle }}</p>{% endif %}
+            {% if hero.cta and hero.cta.url %}
+              <a class="button" href="{{ hero.cta.url }}">{{ hero.cta.label or "Learn more" }}</a>
+            {% endif %}
+          </div>
+          {% if hero.image %}
+            <div class="hero__media">
+              <img class="hero__img" src="{{ hero.image }}" alt="{{ hero.imageAlt or '' }}" />
+            </div>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      <article class="content{% if bottomGlow %} content--bottom-glow{% endif %}">
+        {{ content | safe }}
+      </article>
+    </main>
+
+    {% include "partials/footer.njk" %}
+  </body>
+</html>
